@@ -1,12 +1,10 @@
 import { useState , useEffect } from "react";
+import log from "loglevel";
+import { fetchLeads } from "../api";
 import Footer from "./Footer";
 import Layout from "./Layout";
 
-declare global {
-  interface Window {
-    onloadTurnstileCallback: () => void;
-  }
-}
+
 interface TurnstileInstance {
   render: (
     selector: string,
@@ -28,8 +26,22 @@ useEffect(() => {
     turnstile.render("#example-container", {
       sitekey: "1x00000000000000000000AA",
       callback: () => {
-      
         setShowTurnstile(false);
+        fetchLeads(formData.email)
+          .then((data) => {
+               log.info("Leads data:", data);
+                setFormData({ email: "" });
+                 setTimeout(() => {
+                   setShowTurnstile(false);
+                 }, 10000); 
+          })
+          .catch((error) => {
+             log.error("Error fetching leads:", error);
+             setFormData({ email: "" }); 
+              setTimeout(() => {
+                setShowTurnstile(false); 
+              }, 10000); 
+          });
       },
     });
   }
@@ -38,7 +50,7 @@ useEffect(() => {
       setShowTurnstile(false);
     }
   };
-}, [showTurnstile]);
+}, [showTurnstile, formData.email]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -46,26 +58,6 @@ useEffect(() => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    console.log("Form submitted:", formData);
-    const data = new FormData();
-
-    data.append("email", formData.email);
-   
-
-    const Sheet_Url =
-      "https://docs.google.com/spreadsheets/d/1ui5m6WZ8H_jArW_F9KMYvOp-D_-sWuTAHPJlwnr9jiw/edit?gid=0#gid=0";
-    try {
-      await fetch(Sheet_Url, {
-        method: "POST",
-        body: data,
-      });
-
-      console.log("Email and token submitted successfully");
-      setFormData({ email: ""}); 
-    } catch (error) {
-      console.log(error);
-    }
      setShowTurnstile(true);
   };
   return (
@@ -102,12 +94,12 @@ useEffect(() => {
                 </button>
                 <div
                   id="example-container"
-                  className="cf-turnstile pt-3 pl-1 lg:block md:block hidden"
+                  className="cf-turnstile pt-3 pl-1"
                   data-sitekey="1x00000000000000000000AA"
                 ></div>
               </div>
             </form>
-            <form onSubmit={handleSubmit} className="lg:hidden md:hidden block">
+            <form onSubmit={handleSubmit}>
               <div className="relative my-3 lg:hidden md:hidden block flex flex-col border border-1 border-black p-2 border-opacity-10 ">
                 <input
                   className=" pr-8 pl-2 pt-2 pb-2 rounded-2xl bg-white text-black  text-xs"
@@ -118,7 +110,6 @@ useEffect(() => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  
                 />
 
                 <button
@@ -127,11 +118,6 @@ useEffect(() => {
                 >
                   sign up
                 </button>
-                <div
-                  id="example-container"
-                  className="cf-turnstile pt-3 pl-1 lg:hidden md:hidden block"
-                  data-sitekey="1x00000000000000000000AA"
-                ></div>
               </div>
             </form>
 
