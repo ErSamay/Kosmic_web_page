@@ -1,4 +1,5 @@
-import backgroundImage from "../assets/backgroundImage.png"
+
+import WesternAstrologyIcon2 from "../assets/WesternAstrologyIcon2.svg";
 
 function Navbar() {
   return (
@@ -6,11 +7,11 @@ function Navbar() {
       <div className="h-[10vh] pt-5 pl-5 pr-1 pb-1 ">
         <div className="h-[7vh] w-[7vh] rounded-full  flex items-center  justify-center relative">
           <img
-            src={backgroundImage}
+            src={WesternAstrologyIcon2}
             alt=""
-            className="rounded-full z-10 rotateChakkar opacity-40 absolute"
+            className="rounded-full  rotateChakkar  absolute"
           />
-          <h1>K</h1>
+          <h1 className="text-[#10292e] z-10 font-bold text-xl">K</h1>
         </div>
       </div>
     </>
