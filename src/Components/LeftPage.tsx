@@ -70,8 +70,8 @@ useEffect(() => {
               Subscribe for Kosmic launch invite.
             </h1>
             <p className="lg:text-sm text-xs text-white lg:w-[70%] w-[90%] text-center lg:my-3 my-4 opacity-70">
-              Be notified when we launch our services for limited number of
-              users.
+             " Be notified when we launch our services for limited number of
+              users."
             </p>
             <form onSubmit={handleSubmit}>
               <div className="relative my-3 lg:block md:block hidden">
