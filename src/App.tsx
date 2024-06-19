@@ -1,8 +1,8 @@
-
+import MainWebPage from "./Components/MainWebPage";
 function App() {
   return (
     <>
-      <button className="btn btn-primary">Primary</button>
+     <MainWebPage/>
     </>
   );
 }
