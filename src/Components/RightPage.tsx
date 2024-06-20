@@ -1,8 +1,7 @@
-import React from "react";
-
+/* eslint-disable react/react-in-jsx-scope */
 import westernAstro from "../assets/WesternAstrologyIcon.svg";
 
-import "../App.css"
+import "../App.css";
 
 function RightPage() {
   return (

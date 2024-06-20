@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/react-in-jsx-scope */
 import WesternAstrologyIcon2 from "../assets/WesternAstrologyIcon2.svg";
 
 function Navbar() {
@@ -18,4 +18,4 @@ function Navbar() {
   );
 }
 
-export default Navbar
+export default Navbar;

@@ -1,10 +1,10 @@
-import { useState , useEffect } from "react";
-import React from "react";
+/* eslint-disable react/react-in-jsx-scope */
+import { useState, useEffect } from "react";
+
 import log from "loglevel";
 import { fetchLeads } from "../api";
 import Footer from "./Footer";
 import Layout from "./Layout";
-
 
 interface TurnstileInstance {
   render: (
@@ -19,39 +19,39 @@ interface TurnstileInstance {
 declare const turnstile: TurnstileInstance;
 
 function LeftPage() {
-  const [formData, setFormData] = useState({ email: ""});
+  const [formData, setFormData] = useState({ email: "" });
   const [showTurnstile, setShowTurnstile] = useState(false);
 
-useEffect(() => {
-  if (showTurnstile) {
-    turnstile.render("#example-container", {
-      sitekey: "1x00000000000000000000AA",
-      callback: () => {
-        setShowTurnstile(false);
-        fetchLeads(formData.email)
-          .then((data) => {
-               log.info("Leads data:", data);
-                setFormData({ email: "" });
-                 setTimeout(() => {
-                   setShowTurnstile(false);
-                 }, 10000); 
-          })
-          .catch((error) => {
-             log.error("Error fetching leads:", error);
-             setFormData({ email: "" }); 
-              setTimeout(() => {
-                setShowTurnstile(false); 
-              }, 10000); 
-          });
-      },
-    });
-  }
-  return () => {
+  useEffect(() => {
     if (showTurnstile) {
-      setShowTurnstile(false);
+      turnstile.render("#example-container", {
+        sitekey: "1x00000000000000000000AA",
+        callback: () => {
+          setShowTurnstile(false);
+          fetchLeads(formData.email)
+            .then((data) => {
+              log.info("Leads data:", data);
+              setFormData({ email: "" });
+              setTimeout(() => {
+                setShowTurnstile(false);
+              }, 10000);
+            })
+            .catch((error) => {
+              log.error("Error fetching leads:", error);
+              setFormData({ email: "" });
+              setTimeout(() => {
+                setShowTurnstile(false);
+              }, 10000);
+            });
+        },
+      });
     }
-  };
-}, [showTurnstile, formData.email]);
+    return () => {
+      if (showTurnstile) {
+        setShowTurnstile(false);
+      }
+    };
+  }, [showTurnstile, formData.email]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -59,7 +59,7 @@ useEffect(() => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-     setShowTurnstile(true);
+    setShowTurnstile(true);
   };
   return (
     <>

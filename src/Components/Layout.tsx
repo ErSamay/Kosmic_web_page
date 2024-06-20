@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/react-in-jsx-scope */
 import Navbar from "./Navbar";
 import "remixicon/fonts/remixicon.css";
 function Layout() {
@@ -11,4 +11,4 @@ function Layout() {
   );
 }
 
-export default Layout
+export default Layout;
