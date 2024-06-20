@@ -1,4 +1,4 @@
-
+import React from "react";
 import Navbar from "./Navbar";
 import "remixicon/fonts/remixicon.css";
 function Layout() {

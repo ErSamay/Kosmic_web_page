@@ -1,4 +1,5 @@
 import { useState , useEffect } from "react";
+import React from "react";
 import log from "loglevel";
 import { fetchLeads } from "../api";
 import Footer from "./Footer";
@@ -71,38 +72,37 @@ useEffect(() => {
                 Subscribe for Kosmic launch invite.
               </h1>
             </div>
-            <div className="h-[33vh] mt-2  w-[80%] flex items-center justify-center">
-              <p className="lg:text-sm text-xs text-white lg:w-[65%] text-center  opacity-70 ">
+            <div className="h-[66vh] mt-2  w-[60%] flex flex-col items-center justify-center ">
+              <p className="lg:text-xl text-xs text-white  text-center  opacity-70 w-full">
                 Be notified when we launch our services for limited number of
                 users.
               </p>
-            </div>
-            <div className="h-[33vh] mt-2 ">
-              <form onSubmit={handleSubmit}>
-                <div className="lg:block md:block hidden relative ">
-                  <input
-                    className="relative  md:pr-36 pr-32 pl-2 pt-2 pb-2 rounded-2xl bg-white text-black md:text-sm lg:text-sm text-xs"
-                    placeholder="Type your email address "
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
+              <form
+                onSubmit={handleSubmit}
+                className="relative w-full mt-6 lg:block md:block hidden"
+              >
+                <input
+                  className="relative rounded-2xl w-full bg-white text-black md:text-sm lg:text-sm text-xs lg:pr-7 md:pr-7 pr-2 md:pl-7 lg:pl-7 pl-2 pt-2 pb-2"
+                  placeholder="Type your email address "
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
 
-                  <button
-                    className="bg-[#3eb4c9] text-white lg:pr-7 md:pr-7 pr-2 md:pl-7 lg:pl-7 pl-2 pt-2 pb-2 rounded-2xl absolute md:text-sm  lg:text-sm text-xs right-0"
-                    type="submit"
-                  >
-                    sign me up
-                  </button>
-                  <div
-                    id="example-container"
-                    className="cf-turnstile pt-3 pl-1"
-                    data-sitekey="1x00000000000000000000AA"
-                  ></div>
-                </div>
+                <button
+                  className="bg-[#3eb4c9] text-white lg:pr-7 md:pr-7 pr-2 md:pl-7 lg:pl-7 pl-2 pt-2 pb-2 rounded-2xl absolute md:text-sm  lg:text-sm text-xs right-0"
+                  type="submit"
+                >
+                  sign me up
+                </button>
+                <div
+                  id="example-container"
+                  className="cf-turnstile pt-3 pl-1"
+                  data-sitekey="1x00000000000000000000AA"
+                ></div>
               </form>
               <form onSubmit={handleSubmit}>
                 <div className="relative my-3 lg:hidden md:hidden block flex flex-col border border-1 border-black pt-3 pb-3 pr-3 pl-3 w-56 border-opacity-10 ">

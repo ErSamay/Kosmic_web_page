@@ -1,4 +1,4 @@
-
+import React from "react";
 import WesternAstrologyIcon2 from "../assets/WesternAstrologyIcon2.svg";
 
 function Navbar() {
