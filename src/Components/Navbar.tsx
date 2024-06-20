@@ -4,7 +4,7 @@ import WesternAstrologyIcon2 from "../assets/WesternAstrologyIcon2.svg";
 function Navbar() {
   return (
     <>
-      <div className="h-[10vh] pt-5 pl-5 pr-1 pb-1 ">
+      <div className="h-[10%] pt-5 pl-5 pr-1 pb-1 ">
         <div className="h-[7vh] w-[7vh] rounded-full  flex items-center  justify-center relative">
           <img
             src={WesternAstrologyIcon2}

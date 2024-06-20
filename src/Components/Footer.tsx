@@ -6,7 +6,7 @@ function Footer() {
       <div className="h-[10vh] flex item-center justify-center">
         <div className="flex items-center justify-center">
           <div>
-            <p className="lg:text-xl text-sm tracking-wider text-white pl-4 lg:pl-0">
+            <p className="lg:text-xl text-sm tracking-widest text-white pl-8 lg:pl-0">
               &copy;Kosmic rights reserved.{" "}
             </p>
           </div>
