@@ -1,6 +1,6 @@
 /* eslint-disable react/react-in-jsx-scope */
 import { useState, useEffect } from "react";
-
+import useAnalyticsEventTracker from "./useAnalyticsEventTracker";
 import log from "loglevel";
 import { fetchLeads } from "../api";
 import Footer from "./Footer";
@@ -21,6 +21,7 @@ declare const turnstile: TurnstileInstance;
 function LeftPage() {
   const [formData, setFormData] = useState({ email: "" });
   const [showTurnstile, setShowTurnstile] = useState(false);
+  const gaEventTracker = useAnalyticsEventTracker("Contact us");
 
   useEffect(() => {
     if (showTurnstile) {
@@ -66,24 +67,24 @@ function LeftPage() {
       <div className="lg:w-1/2 h-screen w-screen bg-[#00515F] overflow-hidden lg:overflow-hidden">
         <Layout />
         <div className="h-[80vh] flex items-center justify-center">
-          <div className=" lg:w-[80%] w-full  flex flex-col items-center justify-center leading-40 lg:h-[30vh] h-5">
-            <div className="h-[33vh]  flex items-center justify-center">
-              <h1 className="lg:text-3xl text-2xl md:text-3xl  text-white font-bold lg:w-[85%] w-[95%] w-full text-center ">
+          <div className=" lg:w-[80%] w-full  flex flex-col items-center justify-center leading-10 lg:h-[30vh] h-5">
+            <div className="h-[34vh]  flex items-center justify-center">
+              <h1 className="lg:text-5xl text-2xl md:text-5xl  text-white font-semibold  lg:w-[85%] w-[95%]  text-center">
                 Subscribe for Kosmic launch invite.
               </h1>
             </div>
-            <div className="h-[66vh] mt-2  w-[60%] flex flex-col items-center justify-center ">
-              <p className="lg:text-sm text-xs text-white  text-center  opacity-70 w-full">
+            <div className="h-[66vh] max-w-[90%] flex flex-col items-center justify-center  pt-12">
+              <p className="lg:text-xl text-xs text-white  text-center  opacity-70 max-w-[80%] ">
                 Be notified when we launch our services for limited number of
                 users.
               </p>
               <form
                 onSubmit={handleSubmit}
-                className="relative w-full mt-6 lg:block md:block hidden"
+                className="relative mt-6 lg:block md:block hidden w-[75%] "
               >
                 <input
-                  className="relative rounded-2xl w-full bg-white text-black md:text-sm lg:text-sm text-xs lg:pr-7 md:pr-7 pr-2 md:pl-7 lg:pl-7 pl-2 pt-2 pb-2"
-                  placeholder="Type your email address "
+                  className="relative rounded-2xl bg-white text-black md:text-sm lg:text-lg text-xs  pr-2 md:pl-7 lg:pl-7 pl-2 pt-2 pb-2 w-full"
+                  placeholder="Type your email address"
                   type="email"
                   id="email"
                   name="email"
@@ -93,14 +94,15 @@ function LeftPage() {
                 />
 
                 <button
-                  className="bg-[#3eb4c9] text-white lg:pr-7 md:pr-7 pr-2 md:pl-7 lg:pl-7 pl-2 pt-2 pb-2 rounded-2xl absolute md:text-sm  lg:text-sm text-xs right-0"
+                  className="bg-[#3eb4c9] text-white lg:pr-4 md:pr-4 pr-2 md:pl-4 lg:pl-4 pl-2 pt-2 pb-2 rounded-2xl absolute md:text-xl  lg:text-xl text-xs right-0 "
                   type="submit"
+                  onClick={() => gaEventTracker("call")}
                 >
                   sign me up
                 </button>
                 <div
                   id="example-container"
-                  className="cf-turnstile pt-3 pl-1"
+                  className="cf-turnstile pt-3 pl-1 h-5"
                   data-sitekey="1x00000000000000000000AA"
                 ></div>
               </form>
