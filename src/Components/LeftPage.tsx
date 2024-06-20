@@ -73,7 +73,7 @@ function LeftPage() {
               </h1>
             </div>
             <div className="h-[66vh] mt-2  w-[60%] flex flex-col items-center justify-center ">
-              <p className="lg:text-xl text-xs text-white  text-center  opacity-70 w-full">
+              <p className="lg:text-sm text-xs text-white  text-center  opacity-70 w-full">
                 Be notified when we launch our services for limited number of
                 users.
               </p>
