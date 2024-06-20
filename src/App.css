@@ -8,7 +8,7 @@
 }
 
 .rotateChakkar {
-  animation: rotateChakkar 50s linear infinite;
+  animation: rotateChakkar 100s linear infinite;
   filter: brightness(0) invert(1);
   
 }
@@ -23,7 +23,7 @@
 }
 
 .rotateChakkar1 {
-  animation: rotateChakkar1 50s linear infinite;
+  animation: rotateChakkar1 100s linear infinite;
   filter: brightness(0) invert(1);
   
 }

@@ -64,16 +64,16 @@ function LeftPage() {
   };
   return (
     <>
-      <div className="lg:w-1/2 h-screen w-screen bg-[#00515F] overflow-hidden lg:overflow-hidden">
+      <div className="lg:w-1/2 lg:h-full h-screen w-screen bg-[#00515F] overflow-hidden lg:overflow-hidden">
         <Layout />
-        <div className="h-[80vh] flex items-center justify-center">
-          <div className=" lg:w-[80%] w-full  flex flex-col items-center justify-center leading-10 lg:h-[30vh] h-5">
-            <div className="h-[34vh]  flex items-center justify-center">
+        <div className="h-[80%]  flex items-end justify-center">
+          <div className=" lg:w-[80%] w-full  flex flex-col items-center justify-center lg:h-[70%]  ">
+            <div className="h-[34%]  flex items-center justify-center">
               <h1 className="lg:text-5xl text-2xl md:text-5xl  text-white font-semibold  lg:w-[85%] w-[95%]  text-center">
                 Subscribe for Kosmic launch invite.
               </h1>
             </div>
-            <div className="h-[66vh] max-w-[90%] flex flex-col items-center justify-center  pt-12">
+            <div className="h-[66%] max-w-[90%] flex flex-col items-center justify-start mt-6">
               <p className="lg:text-xl text-xs text-white  text-center  opacity-70 max-w-[80%] ">
                 Be notified when we launch our services for limited number of
                 users.
