@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import MainWebPage from "./Components/MainWebPage";
 
 import ReactGA from "react-ga4";
-const Tracking_id = "G-Q6H3FSLLJG";
+const Tracking_id = "G-GE899NBTDG";
 ReactGA.initialize(Tracking_id);
 
 function App() {
