@@ -8,14 +8,14 @@ function RightPage() {
     <div className="lg:w-1/2 lg:h-full bg-[#15444f] overflow-hidden relative flex items-center justify-center h-screen w-screen ">
       <div className="h-[10vh]"></div>
       <div className="h-[80vh] flex   justify-center items-center">
-        <div className="text-white text-xl lg:text-3xl  w-60 md:text-3xl md:w-96 md:ml-32 ml-5 h-[30vh] flex flex-col items-center justify-center ">
-          <div className="h-[33vh] ">
-            <h1 className="font-bold ">
+        <div className="text-white text-2xl lg:text-5xl   md:text-5xl md:w-[40vw] md:ml-32 ml-5 h-[30vh] flex flex-col items-center justify-center ">
+          <div className="h-[34vh] ">
+            <h1 className="font-semibold ">
               Starry-eyed and ready to vibe? We;ve got your kosmic fix!
             </h1>
           </div>
           <div className="h-[33vh] "></div>
-          <div className="h-[33vh"></div>
+          <div className="h-[33vh "></div>
         </div>
       </div>
       <div className="h-[10vh]"></div>
