@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 
 function Footer() {
   return (
@@ -5,8 +6,8 @@ function Footer() {
       <div className="h-[10vh] flex item-center justify-center">
         <div className="flex items-center justify-center">
           <div>
-            <p className="lg:text-sm text-xs  text-white pl-4 lg:pl-0">
-              &copy;Kosmic SuperAstro rights reserved.{" "}
+            <p className="lg:text-md text-sm  text-white pl-4 lg:pl-0">
+              &copy;Kosmic rights reserved.{" "}
             </p>
           </div>
           <div className="pl-2 flex items-center justify-center text-white  pt-0.5 lg:block hidden md:block">
